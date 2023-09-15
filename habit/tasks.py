@@ -1,6 +1,6 @@
 import datetime
 from os import getenv
-from datetime import timedelta
+from datetime import datetime, timedelta
 import requests
 from celery import shared_task
 
