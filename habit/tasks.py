@@ -15,10 +15,8 @@ def send_tg_notification():
     start_notification_time = datetime.now() - timedelta(minutes=1)
     # geting the habit list where time is greater than start time or equal
     habits_list = Habit.objects.filter(time__gte=start_notification_time)
-    print(habits_list)
     for habit in habits_list:
         if habit.time <= current_time:
-            print(habits_list)
             params = {
                 # 'chat_id': User.objects.get(email=habit.owner).chat_id,
                 'chat_id': getenv('CHAT_ID'),
