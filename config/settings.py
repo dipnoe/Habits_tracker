@@ -90,6 +90,7 @@ DATABASES = {
         'NAME': getenv('DB_NAME'),
         'USER': getenv('DB_USER'),
         'PASSWORD': getenv('DB_PASSWORD'),
+        'HOST': getenv('DB_HOST')
     }
 }
 
@@ -165,8 +166,8 @@ CORS_ALLOW_ALL_ORIGINS = False
 
 
 #CELERY
-CELERY_BROKER_URL = "redis://localhost:6379/0"
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_BROKER_URL = "redis://redis/0"
+CELERY_RESULT_BACKEND = 'redis://redis'
 CELERY_TIMEZONE = "Europe/Moscow"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_ACCEPT_CONTENT = ['json']
